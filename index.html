@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>User SignUp</title>
+
+        <script type="text/javascript">
+        function CheckPass(){
+            var password;
+            var confirmedPass;
+
+            var password = document.getElementById(pass).value;
+            var confirmedPass = document.getElementById(confirmPass).value;
+
+            if (password === confirmedPass)
+                    return True;
+            else
+                window.alert("Passwords don't match");
+                return False;
+
+
+
+        }
+
+
+        </script>
+
+    </head>
+
+    <body>
+        <form action="" method="POST" id="SignUp_Form">
+            <center>
+            <table >
+                <caption>Create An account</caption>
+
+                <tr>
+                    <td>First Name</td>
+                    <td><input type="text" name="firstName"></td>
+                </tr>
+
+                <tr>
+                    <td>Last Name</td>
+                    <td><input type="text" name="lastName"></td>
+                </tr>
+
+                <tr>
+                    <td>Username</td>
+                    <td><input type="text" name="userName"></td>
+                </tr>
+
+                <tr>
+                    <td>E-mail</td>
+                    <td><input type="email" nam="userEmail"></td>
+                </tr>
+
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" id="pass" name="userPassword"></td>
+                </tr>
+
+                <tr>
+                    <td>Confirm Password</td>
+                    <td><input type="password" id="confirmPass"></td>
+                </tr>
+
+            </table>
+        </center>
+        </form>
+    </body>
+</html>

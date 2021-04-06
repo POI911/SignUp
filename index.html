@@ -1,68 +1,67 @@
 <html>
     <head>
-        <title>User SignUp</title>
-
-        <script type="text/javascript">
-        function CheckPass(){
-            var password;
-            var confirmedPass;
-
-            var password = document.getElementById(pass).value;
-            var confirmedPass = document.getElementById(confirmPass).value;
-
-            if (password === confirmedPass)
-                    return True;
-            else
-                window.alert("Passwords don't match");
-                return False;
-
-
-
-        }
-
-
-        </script>
+        <title>SignUp</title>
 
     </head>
+<script>
+    function checkPass(){
+        // Validate if the passwords Matches and longer than 7 chars
+        if (document.getElementById("pass").value ===
+        document.getElementById("confirmPass").value &&
+        document.getElementById("pass").value.length >= 8){
+            document.getElementById("submit").disabled = false;
+        }
+        else
+        document.getElementById("submit").disabled = true;
+    }
+
+
+</script>
 
     <body>
-        <form action="" method="POST" id="SignUp_Form">
-            <center>
+        <center>
+        <form action="sign.php" method="POST" id="SignUp_Form" onsubmit="checkPass();">
+
             <table >
                 <caption>Create An account</caption>
 
                 <tr>
                     <td>First Name</td>
-                    <td><input type="text" name="firstName"></td>
+                    <td><input type="text" name="firstName" required></td>
                 </tr>
 
                 <tr>
                     <td>Last Name</td>
-                    <td><input type="text" name="lastName"></td>
+                    <td><input type="text" name="lastName" required></td>
                 </tr>
 
                 <tr>
                     <td>Username</td>
-                    <td><input type="text" name="userName"></td>
+                    <td><input type="text" name="userName" required></td>
                 </tr>
 
                 <tr>
                     <td>E-mail</td>
-                    <td><input type="email" nam="userEmail"></td>
+                    <td><input type="email" name="userEmail" required></td>
                 </tr>
 
                 <tr>
                     <td>Password</td>
-                    <td><input type="password" id="pass" name="userPassword"></td>
+                    <td><input type="password" id="pass" name="userPassword" onchange="checkPass();" onkeyup="checkPass();"required></td>
                 </tr>
 
                 <tr>
                     <td>Confirm Password</td>
-                    <td><input type="password" id="confirmPass"></td>
+                    <td><input type="password" id="confirmPass" name="confirmPass" onchange="checkPass();" onkeyup="checkPass();" required></td>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" id="submit" name="submit" value="SignUP" disabled></td>
                 </tr>
 
             </table>
-        </center>
+
         </form>
+        </center>
     </body>
 </html>

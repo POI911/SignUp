@@ -1,27 +1,23 @@
 <html>
     <head>
         <title>SignUp</title>
-
+        <script>
+            function checkPass(){
+                // Validate if the passwords Matches and longer than 7 chars
+                if (document.getElementById("pass").value ===
+                document.getElementById("confirmPass").value &&
+                document.getElementById("pass").value.length >= 8){
+                    document.getElementById("submit").disabled = false;
+                }
+                else
+                document.getElementById("submit").disabled = true;
+            }
+        </script>
     </head>
-<script>
-    function checkPass(){
-        // Validate if the passwords Matches and longer than 7 chars
-        if (document.getElementById("pass").value ===
-        document.getElementById("confirmPass").value &&
-        document.getElementById("pass").value.length >= 8){
-            document.getElementById("submit").disabled = false;
-        }
-        else
-        document.getElementById("submit").disabled = true;
-    }
-
-
-</script>
 
     <body>
         <center>
         <form action="sign.php" method="POST" id="SignUp_Form" onsubmit="checkPass();">
-
             <table >
                 <caption>Create An account</caption>
 
@@ -59,15 +55,10 @@
                     <td><input type="submit" id="submit" name="submit" value="SignUp" disabled></td>
                 </tr>
 
-
-
             </table>
-
         </form>
 
-
             <p>Have an account? <a  href="login.html">Log in Now!</a></p>
-
         </center>
     </body>
 </html>

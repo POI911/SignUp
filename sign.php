@@ -46,10 +46,13 @@ if (isset($_POST['submit'])){
         if(checkUser() === false){
             if(signUp() === true){
                 echo "Account Registered";
+				echo "<a href="login.html">Sign in</a>";
+				
             }
         }
         else
             echo "ERROR! Account already exists";
+			echo "<a href="login.html">Sign in</a>";
 }
 else
     echo "<h1>Access Denied!</h1>";

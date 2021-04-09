@@ -10,7 +10,7 @@ function checkUser(){
         }
         else return false;
     }
-    else return false;
+
     }
 
     function signUp(){
@@ -47,14 +47,12 @@ if (isset($_POST['submit'])){
             if(signUp() === true){
                 echo "Account Registered";
             }
-
-
         }
         else
             echo "ERROR! Account already exists";
 }
 else
-    echo "<h1>ERROR!</h1>";
+    echo "<h1>Access Denied!</h1>";
 
 
     include 'DBconnectionClose.php';

@@ -27,7 +27,11 @@ if(isset($_POST["submit"])){
         echo "<a  href='login.html'>Try Again!</a>";
     }
 
+
     include "DBconnectionClose.php";
+}
+else{
+    echo "<h1>Access Denied!</h1>";
 }
 
 
